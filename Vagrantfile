@@ -1,11 +1,6 @@
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "myhostname"
-  config.vm.box = "perk/ubuntu-2204-arm64"
-  config.vm.provider "qemu"
-  
-  config.ssh.username = "vagrant"
-  config.ssh.password = "vagrant"
-
-  # runs only during provisioning
-  config.vm.provision "shell", inline: "echo hello from vagrant"
+  config.vm.box = "spox/ubuntu-arm"
+  config.vm.box_version = "1.0.0"
+  config.vm.hostname = "testbox01"
+  config.vm.network "private_network", ip: "10.9.8.7"
 end
